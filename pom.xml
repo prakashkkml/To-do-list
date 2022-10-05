@@ -14,7 +14,7 @@
 	<name>todotasks</name>
 	<description>Demo project for Todo Tasks</description>
 	<properties>
-		<java.version>11</java.version>
+<!--		<java.version>11</java.version>-->
 	</properties>
 	<dependencies>
 		<dependency>
@@ -41,23 +41,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-<!--		<dependency>-->
-<!--			<groupId>org.springdoc</groupId>-->
-<!--			<artifactId>springdoc-openapi-webmvc-core</artifactId>-->
-<!--			<version>1.5.9</version>-->
-<!--		</dependency>-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-autoconfigure</artifactId>-->
-<!--&lt;!&ndash;			<version>2.5.0</version>&ndash;&gt;-->
-<!--&lt;!&ndash;			<exclusions>&ndash;&gt;-->
-<!--&lt;!&ndash;				<exclusion>&ndash;&gt;-->
-<!--&lt;!&ndash;					<groupId>org.springframework.boot</groupId>&ndash;&gt;-->
-<!--&lt;!&ndash;					<artifactId>spring-boot</artifactId>&ndash;&gt;-->
-<!--&lt;!&ndash;				</exclusion>&ndash;&gt;-->
-<!--&lt;!&ndash;			</exclusions>&ndash;&gt;-->
-<!--		</dependency>-->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -69,11 +52,6 @@
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.6.4</version>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.springdoc</groupId>-->
-<!--			<artifactId>springdoc-openapi-common</artifactId>-->
-<!--			<version>1.5.12</version>-->
-<!--		</dependency>-->
 
 	</dependencies>
 
