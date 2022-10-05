@@ -34,7 +34,7 @@ public class TaskController {
     @Operation(summary = "To fetch the task with task id")
     public ResponseEntity<TaskDto> getTask(@PathVariable Long id) {
         Optional<Task> optionalTask = taskService.findById(id);
-        if (optionalTask.isEmpty())
+        if (!optionalTask.isPresent())
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cannot find task with given id");
         TaskDto taskDto = getTaskDtoFunction(optionalTask.get());
         return ResponseEntity.status(HttpStatus.OK).body(taskDto);
@@ -44,7 +44,7 @@ public class TaskController {
     @Operation(summary = "To update the task with task id")
     public ResponseEntity<TaskDto> updateTask(@PathVariable Long id, @RequestBody TaskDto taskDto) {
         Optional<Task> optionalTask = taskService.findById(id);
-        if (optionalTask.isEmpty())
+        if (!optionalTask.isPresent())
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cannot find task with given id");
         if (Objects.isNull(taskDto.getDescription()) || taskDto.getDescription().isEmpty())
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Task description is required");
@@ -63,7 +63,7 @@ public class TaskController {
     @Operation(summary = "To delete the task with task id")
     public ResponseEntity<String> deleteTask(@PathVariable Long id) {
         Optional<Task> optionalTask = taskService.findById(id);
-        if (optionalTask.isEmpty())
+        if (!optionalTask.isPresent())
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cannot find task with given id");
         taskService.deleteTask(id);
         return ResponseEntity.status(HttpStatus.OK).body("Task removed successfully!");
